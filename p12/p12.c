@@ -2,21 +2,23 @@
 #include <stdlib.h>
 typedef long long ll;
 
-ll checkCircularPrime(ll n, ll d){
-    int num = 1;
-    for(int i = 1; i < d; i++)
-        num *= 10;
-    for(int i = 0; i < d; i++){
-        ll lastDigit = n/num;
-        ll leftOver = n%num;
-        n = leftOver*10 + lastDigit;
+// ll checkCircularPrime(ll n, ll d){
+//     int num = 1;
+//     for(int i = 1; i < d; i++)
+//         num *= 10;
+//     for(int i = 0; i < d; i++){
+//         ll lastDigit = n/num;
+//         ll leftOver = n%num;
+//         if(leftOver < num/10) return 0;
+//         n = leftOver*10 + lastDigit;
+//         for(int j = 2; j*j <= n; j++){
+//             if(n % j == 0) return 0;
+//         }
+//     }
+//     return 1;
+//}
 
-        for(int i = 2; i*i <= n; i++){
-            if(n % i == 0) return 0;
-        }
-    }
-    return 1;
-}
+ll checkCircularPrime(ll n, ll d);
 
 int main(){
     ll n, d;
